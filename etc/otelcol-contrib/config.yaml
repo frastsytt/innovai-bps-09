@@ -1,0 +1,39 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+  filelog:
+    start_at: end
+    ## Expect filelogs as array ["/path/*", "/path/to/*.json"] with wildcard support
+    include: ['/var/log/apache2/other_vhosts_access.log', '/var/log/apache2/error.log']
+  journald:
+    directory: /var/log/journal
+processors:
+  batch:
+    send_batch_size: 1000
+    timeout: 10s
+  resourcedetection:
+    detectors: [env, system]
+    timeout: 2s
+    system:
+      hostname_sources: [dns, os]
+extensions:
+  health_check: {}
+  zpages: {}
+exporters:
+  otlp:
+    endpoint: "10.9.13.97:4317"
+    tls:
+      insecure: true
+  logging:
+    verbosity: normal
+service:
+  extensions: [health_check, zpages]
+  pipelines:
+    logs:
+      receivers: [otlp, filelog, journald]
+      processors: [batch]
+      exporters: [otlp]

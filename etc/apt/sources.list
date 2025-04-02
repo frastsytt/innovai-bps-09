@@ -1,0 +1,15 @@
+# The original sources.list is backed up as /etc/apt/ubuntu.sources_backup
+
+deb https://nexus.tech.ccdcoe.org/repository/noble/ noble main restricted
+deb https://nexus.tech.ccdcoe.org/repository/noble/ noble universe
+deb https://nexus.tech.ccdcoe.org/repository/noble/ noble multiverse
+
+deb https://nexus.tech.ccdcoe.org/repository/noble-updates/ noble-updates main restricted
+deb https://nexus.tech.ccdcoe.org/repository/noble-updates/ noble-updates universe
+deb https://nexus.tech.ccdcoe.org/repository/noble-updates/ noble-updates multiverse
+
+deb https://nexus.tech.ccdcoe.org/repository/noble-security/ noble-security main restricted
+deb https://nexus.tech.ccdcoe.org/repository/noble-security/ noble-security universe
+deb https://nexus.tech.ccdcoe.org/repository/noble-security/ noble-security multiverse
+
+deb https://nexus.tech.ccdcoe.org/repository/noble-backports/ noble-backports main restricted universe multiverse

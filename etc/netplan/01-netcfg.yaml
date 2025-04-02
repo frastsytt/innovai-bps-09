@@ -1,0 +1,24 @@
+network:
+  version: 2
+  ethernets:
+    bps_dmz:
+      set-name: bps_dmz
+      match:
+        macaddress: 00:50:56:89:51:84
+      dhcp4: false
+      dhcp6: false
+      accept-ra: false
+      addresses:
+        - 100.98.9.17/26
+        - "2a07:1182:9:30::17/64"
+      routes:
+        - to: default
+          via: 100.98.9.1
+        - to: default
+          via: "2a07:1182:9:30::1"
+      nameservers:
+        addresses:
+          - 100.95.95.4
+          - "2a07:1181:95:95::4"
+        search:
+          - bps.09.berylia.org

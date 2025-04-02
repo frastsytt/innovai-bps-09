@@ -1,0 +1,14 @@
+{
+  "experimental": true,
+  "features": {
+    "buildkit": true
+  },
+  "ipv6": true,
+  "ip6tables": true,
+  "iptables": true,
+  "fixed-cidr-v6": "fd69::/64",
+  "userland-proxy": true,
+  "registry-mirrors": [
+    "https://nexus-hub.tech.ccdcoe.org"
+  ]
+}
