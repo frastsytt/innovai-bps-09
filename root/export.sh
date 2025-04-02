@@ -30,8 +30,9 @@ for container in $(docker ps -q); do
   # Step 5: Check if the container is a database and perform a dump
   container_image=$(docker inspect --format '{{.Config.Image}}' $container)
   db_backup_file=""
-  inspect_file="~/docker_inspect_${container_name}.json"
-  touch "${inspect_file}"
+  inspect_file="$HOME/docker_inspect_${container_name}.json"
+  echo "{}" > "$inspect_file"  # Initialize with an empty JSON object
+  docker inspect "$container" > "$inspect_file"
   if [[ "$container_image" == *"postgres"* ]]; then
     db_backup_file="/tmp/${HOSTNAME}_${container_name}_db_backup.sql"
     echo "Detected PostgreSQL container. Performing database dump..."
@@ -48,8 +49,6 @@ for container in $(docker ps -q); do
   else
     echo "No database backup performed." >> "$BACKUP_METADATA"
   fi
-  docker inspect "$container" > "$inspect_file"
-  echo "Docker inspect data saved to $inspect_file" >> "$BACKUP_METADATA"
   # Step 6: Commit the container to a Docker image
   echo "Committing container $container_name as image $image_name..."
   docker commit $container "$image_name"

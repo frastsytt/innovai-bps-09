@@ -1,0 +1,258 @@
+[
+    {
+        "Id": "344439a676f95c600a191da07e229bff9036785a7b5c165da8831dc79d5a34e0",
+        "Created": "2025-03-27T11:44:23.541886335Z",
+        "Path": "/usr/bin/bash",
+        "Args": [
+            "/root/.ollama/ollama.sh"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1762,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-03-27T12:05:20.526947741Z",
+            "FinishedAt": "2025-03-27T12:04:49.229500309Z"
+        },
+        "Image": "sha256:a67447f85321bb268fbe9536b39d89364205e8c60058efbb1e999c4059d9b6c3",
+        "ResolvConfPath": "/var/lib/docker/containers/344439a676f95c600a191da07e229bff9036785a7b5c165da8831dc79d5a34e0/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/344439a676f95c600a191da07e229bff9036785a7b5c165da8831dc79d5a34e0/hostname",
+        "HostsPath": "/var/lib/docker/containers/344439a676f95c600a191da07e229bff9036785a7b5c165da8831dc79d5a34e0/hosts",
+        "LogPath": "/var/lib/docker/containers/344439a676f95c600a191da07e229bff9036785a7b5c165da8831dc79d5a34e0/344439a676f95c600a191da07e229bff9036785a7b5c165da8831dc79d5a34e0-json.log",
+        "Name": "/ollama",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/opt/ollama:/root/.ollama:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "opt_app_network",
+            "PortBindings": {
+                "11434/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "11434"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "344439a676f95c600a191da07e229bff9036785a7b5c165da8831dc79d5a34e0",
+                "LowerDir": "/var/lib/docker/overlay2/5e8dbf90277abf783b4c8d055fcb954ece44ec7f3534b8e39049ed87f6dd1057-init/diff:/var/lib/docker/overlay2/ca056747df0b84b7b6ef142f00d13d76263fb22ac0703c46ed7fab83a91672d3/diff:/var/lib/docker/overlay2/cd39df41f4f101c8485e6bbca8ccfb0bbf4c3f57ea3e54528f3cd6b25ee70261/diff:/var/lib/docker/overlay2/d4fc1f0df2e1a151bf4bd337e29a18be9314f736257a0007d7c502d031bf34c5/diff:/var/lib/docker/overlay2/66706135de359aa37c1129775bacffa1b4faf4a7a64a8937834aa9ff5dbae26c/diff",
+                "MergedDir": "/var/lib/docker/overlay2/5e8dbf90277abf783b4c8d055fcb954ece44ec7f3534b8e39049ed87f6dd1057/merged",
+                "UpperDir": "/var/lib/docker/overlay2/5e8dbf90277abf783b4c8d055fcb954ece44ec7f3534b8e39049ed87f6dd1057/diff",
+                "WorkDir": "/var/lib/docker/overlay2/5e8dbf90277abf783b4c8d055fcb954ece44ec7f3534b8e39049ed87f6dd1057/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/opt/ollama",
+                "Destination": "/root/.ollama",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "344439a676f9",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "11434/tcp": {}
+            },
+            "Tty": true,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "OLLAMA_KEEP_ALIVE=24h",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
+                "NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+                "NVIDIA_VISIBLE_DEVICES=all",
+                "OLLAMA_HOST=0.0.0.0:11434"
+            ],
+            "Cmd": null,
+            "Image": "ollama/ollama:latest",
+            "Volumes": {
+                "/root/.ollama": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/usr/bin/bash",
+                "/root/.ollama/ollama.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "126a56b8796b78fc791333c15c3551717511e778c5b90744282429a6fdb88171",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "opt",
+                "com.docker.compose.project.config_files": "docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/opt",
+                "com.docker.compose.service": "ollama",
+                "com.docker.compose.version": "1.29.2",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "20.04"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "46381f806c2abd78774e93875eb962dec408581fb4fe72f2e6e50ab3ce6198c5",
+            "SandboxKey": "/var/run/docker/netns/46381f806c2a",
+            "Ports": {
+                "11434/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "11434"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "11434"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "opt_app_network": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "ollama",
+                        "344439a676f9"
+                    ],
+                    "MacAddress": "26:e2:69:8b:4a:85",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "0019f8d6d9cc8b6bce7a337b3e4ded3b448be119ad1430f46f6bab96122b2c3b",
+                    "EndpointID": "966aea59c64d76acf5abfdca20cbf69040c5c0f89b83c99964efd26233de6715",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "ollama",
+                        "344439a676f9"
+                    ]
+                }
+            }
+        }
+    }
+]

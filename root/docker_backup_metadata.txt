@@ -1,25 +1,22 @@
-Docker Backup Metadata - Wed Apr  2 09:15:01 AM UTC 2025
+Docker Backup Metadata - Wed Apr  2 09:17:40 AM UTC 2025
 ----------------------------------
 Container: flowise_api
-Image: veeb2025/innovai_flowise_api_backup:20250402091501
-Timestamp: 20250402091501
+Image: veeb2025/innovai_flowise_api_backup:20250402091740
+Timestamp: 20250402091740
 No database backup performed.
-Docker inspect data saved to ~/docker_inspect_flowise_api.json
-Backup pushed: veeb2025/innovai_flowise_api_backup:20250402091501
+Backup pushed: veeb2025/innovai_flowise_api_backup:20250402091740
 ----------------------------------
 Container: ollama
-Image: veeb2025/innovai_ollama_backup:20250402091509
-Timestamp: 20250402091509
+Image: veeb2025/innovai_ollama_backup:20250402091743
+Timestamp: 20250402091743
 No database backup performed.
-Docker inspect data saved to ~/docker_inspect_ollama.json
-Backup pushed: veeb2025/innovai_ollama_backup:20250402091509
+Backup pushed: veeb2025/innovai_ollama_backup:20250402091743
 ----------------------------------
 Container: mysql_db
-Image: veeb2025/innovai_mysql_db_backup:20250402091514
-Timestamp: 20250402091514
+Image: veeb2025/innovai_mysql_db_backup:20250402091745
+Timestamp: 20250402091745
 No database backup performed.
-Docker inspect data saved to ~/docker_inspect_mysql_db.json
-Backup pushed: veeb2025/innovai_mysql_db_backup:20250402091514
+Backup pushed: veeb2025/innovai_mysql_db_backup:20250402091745
 ----------------------------------
 Tracking configuration files...
 Tracking /etc/apache2/apache2.conf

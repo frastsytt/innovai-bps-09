@@ -1,0 +1,252 @@
+[
+    {
+        "Id": "0b171b5838a321ce73a4ec5f6e503707e0e24f01669567d8d4816341fe78809d",
+        "Created": "2025-03-27T11:44:54.603622156Z",
+        "Path": "flowise",
+        "Args": [
+            "start"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1763,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-03-27T12:05:20.526290499Z",
+            "FinishedAt": "2025-03-27T12:04:39.247390116Z"
+        },
+        "Image": "sha256:33440fa4df96f2b1d56ae33c1e9731140dad414cdbb062c4d095a07869d68a34",
+        "ResolvConfPath": "/var/lib/docker/containers/0b171b5838a321ce73a4ec5f6e503707e0e24f01669567d8d4816341fe78809d/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/0b171b5838a321ce73a4ec5f6e503707e0e24f01669567d8d4816341fe78809d/hostname",
+        "HostsPath": "/var/lib/docker/containers/0b171b5838a321ce73a4ec5f6e503707e0e24f01669567d8d4816341fe78809d/hosts",
+        "LogPath": "/var/lib/docker/containers/0b171b5838a321ce73a4ec5f6e503707e0e24f01669567d8d4816341fe78809d/0b171b5838a321ce73a4ec5f6e503707e0e24f01669567d8d4816341fe78809d-json.log",
+        "Name": "/flowise_api",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "opt_app_network",
+            "PortBindings": {
+                "3001/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "3001"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "always",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "0b171b5838a321ce73a4ec5f6e503707e0e24f01669567d8d4816341fe78809d",
+                "LowerDir": "/var/lib/docker/overlay2/5b7f3449b64df37ab5f59c8a27fde0a4bf86ee82320f2ab45dda8cb3b55fe0e8-init/diff:/var/lib/docker/overlay2/6a596932a6a7a11d21c4009076b45e572297b42399cb3ee5cc384cf036cc0a68/diff:/var/lib/docker/overlay2/1363211d7b58de9395ce793815d70afc4803ed02a6f22bbedbf87d23fd6f4ec3/diff:/var/lib/docker/overlay2/5c99469d2f823086910a390c1669fe07c5a927e8e192dbfe704a028577a78b98/diff:/var/lib/docker/overlay2/c4ce736d9928b26d9fad5464610a6a0fada3f05b3520c429ed07253e457a655a/diff:/var/lib/docker/overlay2/b7f037dd6285cf3966ee415ffaf65a908d3df044a0753b0c6d3835dc1b3b73d0/diff:/var/lib/docker/overlay2/61bb3b4596b8f284a30a8cbc973a2afdeb0c1bcc49b290f25c145ab55ebb3ead/diff:/var/lib/docker/overlay2/4d496540515ad9951ff641e7c81fb2749420d99ac470a38a22e17195979914f9/diff",
+                "MergedDir": "/var/lib/docker/overlay2/5b7f3449b64df37ab5f59c8a27fde0a4bf86ee82320f2ab45dda8cb3b55fe0e8/merged",
+                "UpperDir": "/var/lib/docker/overlay2/5b7f3449b64df37ab5f59c8a27fde0a4bf86ee82320f2ab45dda8cb3b55fe0e8/diff",
+                "WorkDir": "/var/lib/docker/overlay2/5b7f3449b64df37ab5f59c8a27fde0a4bf86ee82320f2ab45dda8cb3b55fe0e8/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "0b171b5838a3",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "3001/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PORT=3001",
+                "DATABASE_TYPE=mysql",
+                "DATABASE_PORT=3306",
+                "DATABASE_HOST=db",
+                "DATABASE_NAME=flowiseai",
+                "DATABASE_USER=flowise_user",
+                "DATABASE_PASSWORD=FlowiseGt2025",
+                "FLOWISE_USERNAME=FlowiseAdmin",
+                "FLOWISE_PASSWORD=FlowiseGt2025",
+                "FLOWISE_SECRETKEY_OVERWRITE=FlowiseGt2025",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NODE_VERSION=20.19.0",
+                "YARN_VERSION=1.22.22",
+                "PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser"
+            ],
+            "Cmd": null,
+            "Image": "flowiseai/flowise",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "flowise",
+                "start"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "cbf39c1d40301950f25523185b9c1a6287c8f15ca2b801d7107a3bc1eab28c50",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "opt",
+                "com.docker.compose.project.config_files": "docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/opt",
+                "com.docker.compose.service": "flowise",
+                "com.docker.compose.version": "1.29.2"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "9ad7da55a9427a3acda99c7704305335a463120488fac98c11d2396e1ddc3666",
+            "SandboxKey": "/var/run/docker/netns/9ad7da55a942",
+            "Ports": {
+                "3001/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "3001"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "3001"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "opt_app_network": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "0b171b5838a3",
+                        "flowise"
+                    ],
+                    "MacAddress": "a6:51:2b:1f:16:05",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "0019f8d6d9cc8b6bce7a337b3e4ded3b448be119ad1430f46f6bab96122b2c3b",
+                    "EndpointID": "cfbfda8dfb93ecd72c3d01f10e280546e95a09f7067f5493d3aa0ca3e5b26aa6",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.4",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "flowise_api",
+                        "0b171b5838a3",
+                        "flowise"
+                    ]
+                }
+            }
+        }
+    }
+]
