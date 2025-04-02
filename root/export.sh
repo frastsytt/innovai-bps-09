@@ -31,7 +31,7 @@ for container in $(docker ps -q); do
   container_image=$(docker inspect --format '{{.Config.Image}}' $container)
   db_backup_file=""
   inspect_file="~/docker_inspect_${container_name}.json"
-
+  touch "${inspect_file}"
   if [[ "$container_image" == *"postgres"* ]]; then
     db_backup_file="/tmp/${HOSTNAME}_${container_name}_db_backup.sql"
     echo "Detected PostgreSQL container. Performing database dump..."
