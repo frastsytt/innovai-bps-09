@@ -2,10 +2,18 @@
 set_time_limit(0);
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['code_file'])) {
     $tmp_file = $_FILES['code_file']['tmp_name'];
-    $uploaded_file = "files/".$_FILES['code_file']['name'];
-    move_uploaded_file($tmp_file, $uploaded_file);
+    // here we define a safe upload directory and generate a unique filename
+    $upload_dir = "files/";
+    $safe_filename = uniqid('upload_', true) . '.txt'; // unique name with .txt extension
+    $uploaded_file = $upload_dir . $safe_filename;
 
-    if (file_exists($uploaded_file)) {
+    // check if the upload directory exists and is writable
+    if (!is_dir($upload_dir)) {
+        mkdir($upload_dir, 0755, true);
+    }
+
+    // move the uploaded file to the safe location
+    if (move_uploaded_file($tmp_file, $uploaded_file)) {
         $code_content = file_get_contents($uploaded_file);
         $encoded_code = json_encode($code_content, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
@@ -49,6 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['code_file'])) {
         $call_llm_cmd = "curl -X POST http://127.0.0.1:11434/api/generate -H 'Content-Type: application/json' -d " . escapeshellarg($api_data);
         $llm_response = shell_exec($call_llm_cmd);
         $res = json_decode($llm_response);
+        // clean up the uploaded file after processing
+        unlink($uploaded_file);
+    } else {
+        error_log("Failed to move uploaded file: " . $uploaded_file);
     }
 }
 
