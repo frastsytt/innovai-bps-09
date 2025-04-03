@@ -8,16 +8,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $stmt = $conn->query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}'");
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    try {
+        /**
+     * SECURITY FIX: Prevent SQL Injection Vulnerability
+     *
+     * prepared statement with named placeholders to ensure that the inputs are properly escaped and handled as data.
+     */
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($result) {
-        $auth = new User($result['username'], $result['email'], $result['enable']);
-        $_SESSION["auth"] = serialize($auth);
-        header("Location: /dashboard/?page=home.php");
-        exit();
-    } else {
-        echo "<script>alert('account login error')</script>";
+        if ($result) {
+            $auth = new User($result['username'], $result['email'], $result['enable']);
+            $_SESSION["auth"] = serialize($auth);
+            header("Location: /dashboard/?page=home.php");
+            exit();
+        } else {
+            echo "<script>alert('account login error')</script>";
+        }
+    } catch (PDOException $e) {
+        echo "<script>alert('Database error: " . htmlspecialchars($e->getMessage()) . "')</script>";
     }
 }
 ?>
