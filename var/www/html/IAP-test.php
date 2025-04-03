@@ -6,8 +6,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_method = $_POST['api_method'];
     $api_data = json_encode($_POST['api_data'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
-    $call_api_cmd = "curl -X {$api_method} -H 'Authorization: Bearer {$api_key}' '{$api_endpoint}' -d '{$api_data}'";
-    $api_response = shell_exec($call_api_cmd);
+    // Use PHP cURL instead of shell_exec
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $api_endpoint);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $api_method);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ["Authorization: Bearer {$api_key}"]);
+    if ($api_method !== "GET" && !empty($api_data)) {
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $api_data);
+    }
+    $api_response = curl_exec($ch);
+    if ($api_response === false) {
+        error_log("cURL error: " . curl_error($ch));
+        $api_response = json_encode(["error" => "API request failed"]);
+    }
+    curl_close($ch);
 
     $prompt = <<<prompt
             You are an AI assistant skilled in analyzing and summarizing structured data from API responses. Your task is to examine the provided JSON data, identify its key components, and generate a natural language summary that explains its content in a clear and concise manner. 
@@ -42,12 +55,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "stream" => false
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
-    $call_llm_cmd = "curl -X POST http://127.0.0.1:11434/api/generate -H 'Content-Type: application/json' -d " . escapeshellarg($api_data);;
-
+    $call_llm_cmd = "curl -X POST http://127.0.0.1:11434/api/generate -H 'Content-Type: application/json' -d " . escapeshellarg($api_data);
     $llm_response = shell_exec($call_llm_cmd);
     $res = json_decode($llm_response);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -134,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php if (isset($res)): ?>
                     <hr>
                     <h3>Response</h3>
-                    <pre><?= $res->response; ?></pre>
+                    <pre><?= htmlspecialchars($res->response); ?></pre>
                 <?php else: ?>
                     <hr>
                     <h3>How to test api?</h3>
@@ -163,7 +174,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             chatflowid: "ec071e85-7e7a-4ab6-9fa1-d54ad82d6b77",
             apiHost: `https://${window.location.hostname}:3000`,
         })
-
     </script>
 </body>
 </html>
