@@ -5,7 +5,24 @@ set_include_path('../util'.PATH_SEPARATOR.'./pages');
 include_once("auth.php");
 include_once("common.php");
 
+$allowed_pages = ['home.php', 'products.php', 'reviews.php', 'setting.php'];
+$default_page = 'home.php';
 $page = isset($_GET["page"]) ? $_GET['page'] : 'home.php';
+
+/**
+ * SECURITY FIX: Prevent File Inclusion Vulnerability
+ *
+ * The original code directly used user input to include a file:
+ *     <?php include($page) ?>
+ *
+ * This allowed an attacker to manipulate the 'page' GET parameter to include arbitrary files.
+ *
+ * The updated code uses a whitelist of allowed page files. It checks whether the requested page is in the
+ * allowed list. If not, it defaults to 'home.php'. This ensures that only intended pages can be included.
+ */
+if (!in_array($page, $allowed_pages)) {
+  $page = 'home.php';
+}
 
 ?>
 <!DOCTYPE html>
