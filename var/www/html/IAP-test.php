@@ -121,8 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="#" method="POST">
                     <div class="mb-3">
                         <label for="api_endpoint" class="form-label">API Endpoint</label>
-                        <input type="text" name="api_endpoint" class="form-control" id="api_endpoint" value="https://<?=$_SERVER['HTTP_HOST']?>/api/products.php" required>
-                    </div>
+                        <input type="text" name="api_endpoint" class="form-control" id="api_endpoint" value="https://<?= htmlspecialchars($_SERVER['HTTP_HOST']) ?>/api/products.php" required></div>
                     <div class="mb-3">
                         <label for="api_key" class="form-label">API Key</label>
                         <input type="text" name="api_key" class="form-control" id="api_key">
