@@ -9,7 +9,20 @@ if (!isset($_GET['id'])) {
 }
 
 try {
-    $stmt = $conn->query("SELECT * FROM products WHERE id = {$_GET['id']}");
+     /**
+     * SECURITY FIX: Prevent SQL Injection Vulnerability
+     *
+     * The original code interpolated the user input directly into the SQL query:
+     *     $stmt = $conn->query("SELECT * FROM products WHERE id = {$_GET['id']}");
+     *
+     * The updated code uses a prepared statement with a bound parameter, ensuring that the 'id' value is
+     * properly escaped and treated as a simple value. This prevents any SQL code injected by the attacker
+     * from being executed.....
+     */
+    $stmt = $conn->prepare("SELECT * FROM products WHERE id = :id");
+    $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+    $stmt->execute();
+
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$product) {
